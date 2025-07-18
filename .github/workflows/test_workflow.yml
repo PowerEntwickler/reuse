@@ -5,6 +5,7 @@ on:
       path:
         description: 'Der Pfad, der für den Test verwendet werden soll'
         required: true
+        type: string
         default: '.'
 
 jobs:

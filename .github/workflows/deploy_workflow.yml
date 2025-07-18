@@ -4,7 +4,8 @@ on:
   workflow_call:  # Auslöser für die Ausführung durch einen anderen Workflow
     inputs: # Parameter, die an den Workflow übergeben werden können
       environment:
-        description: 'Die Umgebuing, in die deployt werden soll'
+        type: string
+        description: 'Die Umgebung, in die deployt werden soll'
         required: true
         default: 'staging'
     secrets: # Secrets, die im Workflow verwendet werden können

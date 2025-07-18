@@ -7,10 +7,12 @@ on:
       environment:
         description: 'The environment to deploy to'
         required: true
+        type: string
         default: 'staging'
       path:
         description: 'Der Pfad, der für den Build und Test verwendet werden soll'
         required: true
+        type: string
         default: '.'
     secrets:
       personal_access_token:

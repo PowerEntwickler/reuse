@@ -3,6 +3,7 @@ on:
   workflow_call:  # Triggers the workflow when called by another workflow
     inputs:
       path:
+        type: string
         description: 'Der Pfad, der für den Build verwendet werden soll'
         required: true
         default: '.'

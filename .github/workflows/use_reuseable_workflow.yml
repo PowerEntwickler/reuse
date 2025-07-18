@@ -14,4 +14,4 @@ jobs:
       personal_access_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
     with:
       environment: 'production'
-      path: '.'
+      path: 'MEIN-PFAD'
