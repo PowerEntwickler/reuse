@@ -9,9 +9,12 @@ on:
 
 jobs:
   nestedjob:
+    strategy:
+    matrix:
+      target: [dev, stage, prod]
     uses: ./.github/workflows/reusable_workflow.yml
     secrets:
       personal_access_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
     with:
-      environment: 'production'
+      environment: ${{ matrix.target }}
       path: 'MEIN-PFAD'
