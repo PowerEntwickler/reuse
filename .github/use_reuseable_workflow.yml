@@ -7,7 +7,7 @@ on:
 jobs:
   nestedjob:
     # USER_OR_ORG_NAME/REPO_NAME/.github/workflows/REUSABLE_WORKFLOW_FILE.yml@TAG_OR_BRANCH
-    uses: .github/workflows/reusable_workflow.yml@main
+    uses: ./.github/workflows/reusable_workflow.yml@main
     secrets:
       personal_access_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
     with:
