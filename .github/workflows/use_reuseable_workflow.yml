@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         target: [dev, stage, prod]
-    uses: ./.github/workflows/reusable_workflow.yml@main
+    uses: ./.github/workflows/reusable_workflow.yml
     secrets:
       personal_access_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
     with:
