@@ -1,5 +1,4 @@
 name: Execute Reusable Workflow
-description: 'Ein Workflow, der eine wiederverwendbare Workflow-Datei aufruft'
     # Wenn anderes repo: USER_OR_ORG_NAME/REPO_NAME/.github/workflows/REUSABLE_WORKFLOW_FILE.yml@TAG_OR_BRANCH
     # Wenn lokal: ./.github/workflows/REUSABLE_WORKFLOW_FILE.yml
 on:
