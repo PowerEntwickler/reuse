@@ -1,5 +1,7 @@
-on:
+name: Execute Reusable Workflow
+description: 'Ein Workflow, der eine wiederverwendbare Workflow-Datei aufruft'
 
+on:
   push:
     branches:
       - main
