@@ -1,0 +1,8 @@
+{
+    "name": "CI Workflow Template",
+    "description": "An example CI workflow template.",
+    "iconName": "octicon repo-forked",
+    "categories": [
+        "Examples"
+    ]
+}
