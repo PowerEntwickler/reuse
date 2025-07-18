@@ -21,14 +21,14 @@ on:
 jobs:
 
   build:
-    uses: ./.github/workflow-templates/build_workflow.yml
+    uses: ./.github/workflows/build_workflow.yml
     with:
       path: ${{ inputs.path }}
   
   test:
     needs: build
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-    uses: ./.github/workflow-templates/test_workflow.yml
+    uses: ./.github/workflows/test_workflow.yml
     with:
       path: ${{ inputs.path }}
   
@@ -40,7 +40,7 @@ jobs:
 
   deploy:
     needs: [build, test]
-    uses: ./.github/workflow-templates/deploy_workflow.yml
+    uses: ./.github/workflows/deploy_workflow.yml
     secrets: inherit # Gibt alle Secrets an den aufgerufenen Workflow weiter
     with:
       environment: ${{ inputs.environment }}
