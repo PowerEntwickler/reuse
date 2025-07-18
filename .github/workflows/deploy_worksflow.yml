@@ -1,0 +1,27 @@
+name: Reusable Deploy Workflow
+
+on:
+  workflow_call:  # Auslöser für die Ausführung durch einen anderen Workflow
+    inputs: # Parameter, die an den Workflow übergeben werden können
+      environment:
+        description: 'Die Umgebuing, in die deployt werden soll'
+        required: true
+        default: 'staging'
+    secrets: # Secrets, die im Workflow verwendet werden können
+      personal_access_token:
+        required: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        id: deploy-script
+        with:
+          result-encoding: string
+          script: |
+            const environment = '${{ inputs.environment }}';
+            console.log(`Auslieferung an ${environment} Umgebung...`);
+            console.log(`Mit PAT ${{ secrets.personal_access_token }}...`);
+            return "FERTIG"
+      - name: Gib Ergebnis aus
+        run: echo "${{steps.deploy-script.outputs.result}}"

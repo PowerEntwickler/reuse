@@ -1,0 +1,25 @@
+name: Reusable Test Workflow
+on:
+  workflow_call:  # Triggers the workflow when called by another workflow
+    inputs:
+      path:
+        description: 'Der Pfad, der für den Test verwendet werden soll'
+        required: true
+        default: '.'
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run tests
+        run: echo "Ausführung der Tests im Pfad ${{ inputs.path }}"
+      - id: test_results
+        run: echo "result=ERFOLG" >> $GITHUB_OUTPUT
+
+    outputs:
+      result: ${{ steps.test_results.outputs.result }}
