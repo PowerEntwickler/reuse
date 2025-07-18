@@ -1,0 +1,13 @@
+name: 'Example Action'
+description: 'A simple GitHub Action example'
+inputs:
+  my-input:
+    description: 'An input parameter'
+    required: true
+    default: 'World'
+outputs:
+  my-output:
+    description: 'An output value'
+runs:
+  using: 'node16'
+  main: 'index.js'
